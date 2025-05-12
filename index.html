@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jatra Axom | সত্যতাৰ ৰাস্তাত এখোজ - Assam News Channel</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="Jatra Axom - News & Media Platform of Assam">
+  <meta name="description" content="Jatra Axom is a reliable news and media platform from Assam, delivering updates, alerts, and stories to keep you informed and empowered.">
+  <meta name="keywords" content="Jatra Axom, Assam news, Assamese news, Axomiya news, Assam media, North East news, Local news Assam">
+  <meta name="author" content="Jatra Axom">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Jatra Axom - News & Media Platform of Assam">
+  <meta property="og:description" content="Stay updated with Jatra Axom - your trusted news source from Assam.">
+  <meta property="og:image" content="https://i.ibb.co/MxjFtJkX/1747035658222.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-website-url.com">
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://your-website-url.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.ibb.co/MxjFtJkX/1747035658222.png" type="image/png">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+      font-family: 'Kalpurush';
+      src: url('kalpurush.otf') format('opentype');
+      font-display: swap;
+    }
+
+    :root {
+      --primary-color: #0d6e6e;
+      --secondary-color: #0a4d4d;
+      --accent-color: #ff7f50;
+      --light-color: #f8f9fa;
+      --dark-color: #333;
+      --text-color: #333;
+      --text-light: #666;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .scrolled {
+      padding: 10px 5%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+
+    .header-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+      transition: var(--transition);
+    }
+
+    .logo-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .scrolled .logo {
+      height: 40px;
+    }
+
+    .tagline {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-left: 15px;
+      padding-left: 15px;
+      border-left: 1px solid #ddd;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .menu-toggle:hover {
+      background-color: rgba(13, 110, 110, 0.1);
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background-color: white;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      padding: 80px 30px 30px;
+      transition: right 0.4s ease-in-out;
+      z-index: 1000;
+    }
+
+    .nav-menu.open {
+      right: 0;
+    }
+
+    .nav-menu .close-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .nav-menu .close-btn:hover {
+      background-color: rgba(13, 110, 110, 0.1);
+    }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-bottom: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 15px;
+      transition: var(--transition);
+      border-radius: var(--border-radius);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+      background-color: rgba(13, 110, 110, 0.05);
+    }
+
+    .nav-links a i {
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Main Content */
+    main {
+      padding-top: 100px;
+      min-height: calc(100vh - 150px);
+    }
+
+    /* About Section */
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.6s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .about-title {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    .about-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .about-text {
+      margin-bottom: 20px;
+      color: var(--text-light);
+    }
+
+    /* Notice Section */
+    .notice {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #fff8e1;
+      border-left: 5px solid var(--accent-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      animation: fadeIn 0.8s 0.3s forwards;
+      opacity: 0;
+    }
+
+    .notice-title {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .notice-title i {
+      font-size: 1.4rem;
+    }
+
+.banner {
+    width: 90%;
+    border-radius: 10px;
+    margin: 15px auto; /* Yeh 'auto' left aur right margins ko center karta hai */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: block; /* Inline image ko block banata hai jisse margin auto kaam kare */
+}
+    /* Social Buttons */
+    .social-buttons {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
+    }
+
+    .social-btn i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .facebook-btn {
+      background-color: #1877f2;
+      color: white;
+    }
+
+    .facebook-btn:hover {
+      background-color: #166fe5;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
+    }
+
+    .instagram-btn {
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+      color: white;
+    }
+
+    .instagram-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(224, 36, 94, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Overlay for menu */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .tagline {
+        display: none;
+      }
+      
+      .about-container, .notice {
+        margin: 20px;
+        padding: 20px;
+      }
+      
+      .about-title {
+        font-size: 1.8rem;
+      }
+      
+      .social-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .social-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-menu {
+        width: 280px;
+      }
+      
+      .logo-name {
+        font-size: 1.3rem;
+      }
+      
+      .logo {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="logo-container">
+      <img src="https://i.ibb.co/MxjFtJkX/1747035658222.png" alt="Jatra Axom Logo" class="logo">
+      <div class="logo-name">Jatra Axom</div>
+      <div class="tagline">সত্যতাৰ ৰাস্তাত এখোজ</div>
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Navigation Menu -->
+  <div class="overlay" id="overlay"></div>
+  <nav class="nav-menu" id="navMenu">
+    <button class="close-btn" id="closeMenu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+ 
+    <!-- About Section -->
+    <section class="about-container">
+      <h1 class="about-title">Jatra Axom</h1>
+      <p class="about-subtitle">Founded: 12 May 2025</p>
+      <p class="about-text">Jatra Axom is a dedicated news and media platform committed to delivering timely and reliable updates to the people of Assam. With a mission to inform, alert, and empower citizens, we cover a wide range of topics — from local developments and cultural events to national affairs and emergency alerts.</p>
+      <p class="about-text">Rooted in the values of integrity, accuracy, and public service, Jatra Axom aims to be the voice of Assam — bridging information gaps and ensuring that no update goes unnoticed. Our focus is simple: to keep you informed, aware, and ahead.</p>
+    </section>
+
+    <!-- Notice Section -->
+    <div class="notice">
+      <h3 class="notice-title"><i class="fas fa-exclamation-circle"></i> Important Notice</h3>
+      <p>Our official website is currently under development and will be launching soon. In the meantime, stay connected with Jatra Axom through our active channels on Facebook and Instagram for the latest updates.</p>
+    </div>
+
+    <!-- Social Buttons -->
+    <div class="social-buttons">
+      <a href="https://www.facebook.com/share/16KsCjzf39/" class="social-btn facebook-btn" id="facebookBtn">
+        <i class="fab fa-facebook-f"></i> Facebook Page
+      </a>
+      <a href="https://instagram.com/jatraaxom" class="social-btn instagram-btn">
+        <i class="fab fa-instagram"></i> Instagram Page
+      </a>
+       <a href="https://borahdigitalsolutions.rf.gd" target="_blank">
+  <img src="https://i.ibb.co/Fbpwt6Jg/IMG-20250511-WA0000.jpg" alt="Rose Velvet Banner" class="banner">
+</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="copyright">Copyright &copy; 2025 Jatra Axom</p>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const closeMenu = document.getElementById('closeMenu');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('overlay');
+    
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    closeMenu.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    overlay.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      
+      if (currentScroll <= 0) {
+        header.classList.remove('scrolled');
+        return;
+      }
+      
+      if (currentScroll > lastScroll && !header.classList.contains('scrolled')) {
+        // Scroll down
+        header.classList.add('scrolled');
+        setTimeout(() => {
+          header.classList.add('header-visible');
+        }, 10);
+      } else if (currentScroll < lastScroll && header.classList.contains('scrolled')) {
+        // Scroll up
+        header.classList.remove('scrolled');
+        header.classList.remove('header-visible');
+      }
+      
+      lastScroll = currentScroll;
+    });
+    
+    // Facebook button placeholder (replace with actual link when available)
+    document.getElementById('facebookBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Our Facebook page will be available soon. Thank you for your interest!');
+    });
+  </script>
+</body>
+</html>
